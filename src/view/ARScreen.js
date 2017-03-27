@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text
+  Image
 } from 'react-native';
 import Camera from 'react-native-camera';
 
@@ -20,7 +20,9 @@ class ARScreen extends Component {
         }}
         style = { styles.preview }
         aspect = { Camera.constants.Aspect.fill }>
-        <Text style = { styles.video }>VIDEO</Text>
+        <Image
+          source = { require('./iv.jpg') }
+          style = { styles.image } />
       </Camera>
     );
   }
@@ -30,13 +32,15 @@ const styles = StyleSheet.create({
   preview: {
     flex: 1
   },
-  video: {
+  image: {
     justifyContent: 'center',
     alignItems: 'center',
-    top: 100,
+    width: 250,
+    height: 500,
+    top: 70,
     bottom: 100,
-    left: 50,
-    right: 50
+    right: 40,
+    left: 50
   }
 });
 

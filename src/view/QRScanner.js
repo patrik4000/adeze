@@ -21,7 +21,7 @@ export default class MarinaQR extends Component {
     return (
       <View style={styles.container}>
         <Camera
-          ref = {(cam) => {
+          ref = { ( cam ) => {
             this.camera = cam;
           }}
           style = { styles.preview }
