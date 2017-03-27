@@ -3,6 +3,7 @@ package com.marinaqr;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.sensormanager.SensorManagerPackage;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import com.eguma.barcodescanner.BarcodeScannerPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SensorManagerPackage(),
             new RCTCameraPackage(),
             new ReactVideoPackage(),
             new BarcodeScannerPackage()

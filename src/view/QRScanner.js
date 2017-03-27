@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   View,
   StyleSheet,
-  Text
+  Text,
+  Platform
 } from 'react-native';
 import Camera from 'react-native-camera';
 
@@ -14,7 +15,12 @@ export default class MarinaQR extends Component {
   }
 
   barcodeReceived() {
-    this.props.navigaton.push({ name: 'ar_screen' });
+    if (Platform.OS === 'ios' ){
+      this.props.navigaton.push({ name: 'gyroscope_ios' });
+    }
+    else {
+      this.props.navigaton.push({ name: 'ar_screen' });
+    }
   }
 
   render() {
@@ -27,7 +33,7 @@ export default class MarinaQR extends Component {
           style = { styles.preview }
           onBarCodeRead = { () => this.barcodeReceived() }
           aspect = { Camera.constants.Aspect.fill }>
-          <Text style = { styles.capture }>Skenirajte bar kod.</Text>
+          <Text style = { styles.capture }>Skenirajte QR kod</Text>
         </Camera>
       </View>
     );

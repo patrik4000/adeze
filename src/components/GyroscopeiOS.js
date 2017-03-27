@@ -8,12 +8,12 @@ import {
   DeviceEventEmitter
 } from 'react-native';
 import Camera from 'react-native-camera';
-import { SensorManager } from 'NativeModules';
+import { Gyroscope } from 'NativeModules';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-class ARScreen extends Component {
+class GyroscopeiOS extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -25,7 +25,7 @@ class ARScreen extends Component {
   }
 
   componentDidMount() {
-    DeviceEventEmitter.addListener('Gyroscope', (data) => {
+    DeviceEventEmitter.addListener('GyroData', (data) => {
       this.setState({
         x: this.state.x + Math.ceil(data.x * 10),
         y: this.state.y + Math.ceil(data.y * 10),
@@ -36,18 +36,18 @@ class ARScreen extends Component {
   }
 
   componentWillUnmount() {
-    SensorManager.stopGyroscope();
+    Gyroscope.stopGyroUpdates();
   }
 
   handleStart() {
-    SensorManager.startGyroscope(0.1);
+    Gyroscope.startGyroUpdates(100);
     this.setState({
       gyro: true
     });
   }
 
   handleStop() {
-    SensorManager.stopGyroscope();
+    Gyroscope.stopGyroUpdates();
     this.setState({
       x: deviceWidth / 4,
       y: deviceHeight / 4,
@@ -89,7 +89,7 @@ class ARScreen extends Component {
             <Button
               title = 'Start'
               style = {{ color: 'green', margin: 20 }}
-              onPress = { () => this.handleStart() }>Start Android</Button>
+              onPress = { () => this.handleStart() }>Start iOS</Button>
         }
       </Camera>
     );
@@ -98,8 +98,8 @@ class ARScreen extends Component {
 
 const styles = StyleSheet.create({
   preview: {
-    flex: 1,
+    flex: 1
   }
 });
 
-module.exports = ARScreen;
+module.exports = GyroscopeiOS;

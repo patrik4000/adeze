@@ -7,10 +7,12 @@ import {
 
 const QRScanner = require('./src/view/QRScanner');
 const ARScreen = require('./src/view/ARScreen');
+const GyroscopeiOS = require('./src/components/GyroscopeiOS');
 
 const ROUTES = {
   qr_scanner: QRScanner,
-  ar_screen: ARScreen
+  ar_screen: ARScreen,
+  gyroscope_ios: GyroscopeiOS 
 };
 
 export default class MarinaQR extends Component {
