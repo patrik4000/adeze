@@ -1,0 +1,121 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/display-name": [0, { ignoreTranspilerName: false }],
+    "react/jsx-closing-bracket-location": [2, "after-props"],
+    "react/jsx-handler-names": [0, {
+      eventHandlerPrefix: "handle",
+      eventHandlerPropPrefix: "on",
+    }],
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-key": 0,
+    "react/jsx-max-props-per-line": [0, { maximum: 1 }],
+    "react/jsx-no-bind": [2, {
+      ignoreRefs: true,
+      allowArrowFunctions: true,
+      allowBind: true,
+    }],
+    "react/jsx-no-duplicate-props": [0, { ignoreCase: false }],
+    "react/jsx-no-literals": 0,
+    "react/jsx-no-undef": 2,
+    "react/jsx-pascal-case": [2, {
+      allowAllCaps: true,
+      ignore: [],
+    }],
+    "react/jsx-sort-props": [0, {
+      ignoreCase: false,
+      callbacksLast: false,
+      shorthandFirst: false,
+      shorthandLast: false,
+    }],
+    "react/jsx-uses-react": [2],
+    "react/jsx-uses-vars": 2,
+    "react/no-danger": 0,
+    "react/no-deprecated": [2],
+    "react/no-did-mount-set-state": [2],
+    "react/no-did-update-set-state": [2],
+    "react/no-direct-mutation-state": 0,
+    "react/no-is-mounted": 2,
+    "react/no-multi-comp": [2, { ignoreStateless: true }],
+    "react/no-set-state": 0,
+    "react/no-string-refs": 2,
+    "react/no-unknown-property": 2,
+    "react/prefer-es6-class": [2, "always"],
+    "react/prefer-stateless-function": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/require-render-return": 2,
+    "react/self-closing-comp": 2,
+    "react/jsx-space-before-closing": [2, "always"],
+    "react/sort-comp": [2, {
+      order: [
+        "static-methods",
+        "lifecycle",
+        "/^on.+$/",
+        "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+        "everything-else",
+        "/^render.+$/",
+        "render"
+      ],
+    }],
+    "react/jsx-wrap-multilines": [2, {
+      declaration: true,
+      assignment: true,
+      return: true
+    }],
+    "react/wrap-multilines": 0,
+    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-no-target-blank": 2,
+    "react/jsx-no-comment-textnodes": 2,
+    "react/no-comment-textnodes": 0,
+    "react/no-render-return-value": 2,
+    "react/require-optimization": [0, { allowDecorators: [] }],
+    "react/no-find-dom-node": 2,
+    "no-extra-semi": "error",
+    "semi": ["error", "always"],
+    "camelcase": ["error", { properties: "never" }],
+    "no-shadow": "error",
+    "no-shadow-restricted-names": "error",
+    "prefer-const": ["error", {
+      destructuring: "any",
+      ignoreReadBeforeAssign: true,
+    }],
+    "no-var": "error",
+    "comma-spacing": ["error", { before: false, after: true }],
+    "space-infix-ops": "error",
+    "keyword-spacing": ["error", {
+      before: true,
+      after: true,
+      overrides: {
+        return: { after: true },
+        throw: { after: true },
+        case: { after: true }
+      }
+    }],
+    "eqeqeq": ["error", "allow-null"],
+    "no-redeclare": "error",
+    "no-undef": "error",
+    "no-undef-init": "error",
+    "no-undefined": "off",
+    "radix": "error",
+    "quote-props": ["error", "consistent", { keywords: true, unnecessary: true, numbers: false }],
+    "object-property-newline": ["error", {
+      allowMultiplePropertiesPerLine: true,
+    }],
+    "no-unused-vars": ["error", { vars: "local", args: "after-used" }],
+    "object-curly-spacing": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed"],
+  },
+  "plugins": [
+    "react"
+  ]
+}
